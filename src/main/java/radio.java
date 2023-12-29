@@ -10,7 +10,8 @@ public class radio {
         if (newCurrentNumberRadioStation < 9) {
             currentNumberRadioStation = newCurrentNumberRadioStation + 1;
 
-        } else { return;
+        } else {
+            return;
         }
     }
 
