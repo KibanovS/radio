@@ -1,6 +1,6 @@
 public class radio {
+    public int currentVolume;
     private int currentNumberRadioStation;
-
 
     public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
@@ -10,12 +10,10 @@ public class radio {
         if (newCurrentNumberRadioStation < 9) {
             currentNumberRadioStation = newCurrentNumberRadioStation + 1;
 
-                return;
-        }
-        else  {
-            return;
+        } else {
         }
     }
+
     public void setCurrentNumberRadioStationDown(int newCurrentNumberRadioStation) {
 
         if (newCurrentNumberRadioStation < 0) {
@@ -23,13 +21,12 @@ public class radio {
             newCurrentNumberRadioStation = 9;
             currentNumberRadioStation = 9;
             return;
-        }
-        else {
+        } else {
             newCurrentNumberRadioStation = newCurrentNumberRadioStation - 1;
         }
         currentNumberRadioStation = newCurrentNumberRadioStation;
     }
-    public int currentVolume;
+
     public int getCurrentVolume() {
         return currentVolume;
     }
