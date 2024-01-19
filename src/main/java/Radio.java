@@ -1,31 +1,27 @@
-public class radio {
+public class Radio {
     public int currentVolume;
-    private int currentNumberRadioStation;
+    public int currentNumberRadioStation;
 
     public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
     }
 
-    public void setCurrentNumberRadioStationUp(int newCurrentNumberRadioStation) {
-        if (newCurrentNumberRadioStation < 9) {
-            currentNumberRadioStation = newCurrentNumberRadioStation + 1;
+    public void setCurrentNumberRadioStationUp() {
+        if (currentNumberRadioStation < 9) {
+            currentNumberRadioStation = currentNumberRadioStation + 1;
 
-        } else {
-            return;
         }
     }
 
-    public void setCurrentNumberRadioStationDown(int newCurrentNumberRadioStation) {
-
-        if (newCurrentNumberRadioStation < 0) {
-
-            newCurrentNumberRadioStation = 9;
+    public void setCurrentNumberRadioStationDown(int newSetCurrentNumberRadioStationDown) {
+        if (newSetCurrentNumberRadioStationDown < 0) {
             currentNumberRadioStation = 9;
-            return;
         } else {
-            newCurrentNumberRadioStation = newCurrentNumberRadioStation - 1;
+            newSetCurrentNumberRadioStationDown = newSetCurrentNumberRadioStationDown - 1;
+            currentNumberRadioStation = newSetCurrentNumberRadioStationDown;
+            return;
         }
-        currentNumberRadioStation = newCurrentNumberRadioStation;
+        newSetCurrentNumberRadioStationDown = currentNumberRadioStation;
     }
 
     public int getCurrentVolume() {
@@ -45,4 +41,6 @@ public class radio {
         }
         currentVolume = newCurrentVolume;
     }
+
+
 }
