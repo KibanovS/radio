@@ -6,22 +6,24 @@ public class Radio {
         return currentNumberRadioStation;
     }
 
-    public void setCurrentNumberRadioStationUp() {
-        if (currentNumberRadioStation < 9) {
-            currentNumberRadioStation = currentNumberRadioStation + 1;
-
-        }
-    }
-
-    public void setCurrentNumberRadioStationDown(int newSetCurrentNumberRadioStationDown) {
-        if (newSetCurrentNumberRadioStationDown < 0) {
-            currentNumberRadioStation = 9;
+    public void next(int newNext) {
+        if (newNext < 9) {
+            newNext = newNext + 1;
         } else {
-            newSetCurrentNumberRadioStationDown = newSetCurrentNumberRadioStationDown - 1;
-            currentNumberRadioStation = newSetCurrentNumberRadioStationDown;
             return;
         }
-        newSetCurrentNumberRadioStationDown = currentNumberRadioStation;
+        currentNumberRadioStation = newNext;
+    }
+
+    public void prev(int newPrev) {
+        if (newPrev < 0) {
+            currentNumberRadioStation = 9;
+        } else {
+            newPrev = newPrev - 1;
+            currentNumberRadioStation = newPrev;
+            return;
+        }
+        newPrev = currentNumberRadioStation;
     }
 
     public int getCurrentVolume() {
