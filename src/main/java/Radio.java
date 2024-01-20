@@ -1,47 +1,71 @@
 public class Radio {
     public int currentVolume;
-    public int currentNumberRadioStation;
+    private int currentNumberRadioStation;
 
     public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
     }
-
-    public void next(int newNext) {
-        if (newNext < 9) {
-            newNext = newNext + 1;
-        } else {
-            return;
+    public void setCurrentNumberRadioStation(int newCurrentNumberRadioStation){
+        if (newCurrentNumberRadioStation > 9){
+            newCurrentNumberRadioStation = 0;
         }
-        currentNumberRadioStation = newNext;
-    }
-
-    public void prev(int newPrev) {
-        if (newPrev < 0) {
-            currentNumberRadioStation = 9;
-        } else {
-            newPrev = newPrev - 1;
-            currentNumberRadioStation = newPrev;
-            return;
+        else {
+            currentNumberRadioStation = newCurrentNumberRadioStation;
         }
-        newPrev = currentNumberRadioStation;
+        if (newCurrentNumberRadioStation < 0) {
+            newCurrentNumberRadioStation = 9;
+        }
+        else {
+            currentNumberRadioStation = newCurrentNumberRadioStation;
+        }
+        currentNumberRadioStation = newCurrentNumberRadioStation;
     }
+    public void next(){
+        int target = currentNumberRadioStation;
+        if (target < 9) {
+            target = target + 1;
+        } else {
+            target = 0;
+        }
+        currentNumberRadioStation = target;
 
+    }
+    public void prev(){
+        int target = currentNumberRadioStation;
+        if (target > 0 ){
+            target = target - 1;
+        }
+        else {
+            target = 9;
+        }
+        currentNumberRadioStation = target;
+    }
     public int getCurrentVolume() {
         return currentVolume;
     }
+    public void setCurrentVolume(int newCurrentVolume){
+currentVolume = newCurrentVolume;
 
-    public void setCurrentVolumeUp(int newCurrentVolume) {
-        if (newCurrentVolume < 100) {
-            newCurrentVolume = newCurrentVolume + 1;
-        }
-        currentVolume = newCurrentVolume;
     }
-
-    public void setCurrentVolumeDown(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-            newCurrentVolume = newCurrentVolume - 1;
+    public void setCurrentVolumeUp() {
+        int target = currentVolume;
+        if (target < 100) {
+            target = target + 1;
         }
-        currentVolume = newCurrentVolume;
+else {
+    target = 100;
+        }
+currentVolume = target;
+    }
+    public void setCurrentVolumeDown(){
+        int target = currentVolume;
+        if (target > 0) {
+            target = target - 1;
+        }
+        else {
+            target = 0;
+        }
+        currentVolume = target;
     }
 
 
