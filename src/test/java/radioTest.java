@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 
 public class radioTest {
 
@@ -8,13 +7,14 @@ public class radioTest {
     public void nextStation() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(5);
-info.next();
+        info.next();
         int expected = 6;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void prevStation(){
+    public void prevStation() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(5);
         info.prev();
@@ -22,6 +22,7 @@ info.next();
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
     public void mustSwitchToEnd() {
         Radio info = new Radio();
@@ -31,8 +32,9 @@ info.next();
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-            public void mustSwitchToBeginning(){
+    public void mustSwitchToBeginning() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(9);
         info.next();
@@ -40,24 +42,27 @@ info.next();
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void correctDirectIndicationOfStation(){
+    public void correctDirectIndicationOfStation() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(5);
         int expected = 5;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void directIndicationOfTheStationBelow(){
+    public void directIndicationOfTheStationBelow() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(-2);
         int expected = 9;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void directIndicationOfTheStationAbove(){
+    public void directIndicationOfTheStationAbove() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(10);
         int expected = 0;
@@ -66,7 +71,7 @@ info.next();
     }
 
     @org.testng.annotations.Test
-    public void shouldTurnUpVolume(){
+    public void shouldTurnUpVolume() {
         Radio info = new Radio();
         info.setCurrentVolume(0);
         info.setCurrentVolumeUp();
@@ -74,8 +79,9 @@ info.next();
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void shouldTurnDownVolume(){
+    public void shouldTurnDownVolume() {
         Radio info = new Radio();
         info.setCurrentVolume(100);
         info.setCurrentVolumeDown();
@@ -83,8 +89,9 @@ info.next();
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void notHigherThanMax(){
+    public void notHigherThanMax() {
         Radio info = new Radio();
         info.setCurrentVolume(100);
         info.setCurrentVolumeUp();
@@ -92,8 +99,9 @@ info.next();
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @org.testng.annotations.Test
-    public void notLowerThanMin(){
+    public void notLowerThanMin() {
         Radio info = new Radio();
         info.setCurrentVolume(0);
         info.setCurrentVolumeDown();
