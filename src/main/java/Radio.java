@@ -1,5 +1,5 @@
 public class Radio {
-    public int currentVolume;
+    private int currentVolume;
     private int currentNumberRadioStation;
 
     public int getCurrentNumberRadioStation() {
