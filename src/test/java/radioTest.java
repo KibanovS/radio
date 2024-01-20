@@ -56,7 +56,7 @@ public class radioTest {
     public void directIndicationOfTheStationBelow() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(-2);
-        int expected = 9;
+        int expected = 0;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
@@ -65,7 +65,7 @@ public class radioTest {
     public void directIndicationOfTheStationAbove() {
         Radio info = new Radio();
         info.setCurrentNumberRadioStation(10);
-        int expected = 0;
+        int expected = 9;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
