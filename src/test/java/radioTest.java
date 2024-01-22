@@ -1,7 +1,19 @@
 import org.junit.jupiter.api.Assertions;
 
 public class radioTest {
+    @org.testng.annotations.Test
+    public void size10() {
+        Radio info = new Radio(10);
+        Assertions.assertEquals(0, info.getMinRadioStation());
+        Assertions.assertEquals(9, info.getMaxRadioStation());
+    }
 
+    @org.testng.annotations.Test
+    public void size30() {
+        Radio info = new Radio(30);
+        Assertions.assertEquals(0, info.getMinRadioStation());
+        Assertions.assertEquals(29, info.getMaxRadioStation());
+    }
 
     @org.testng.annotations.Test
     public void nextStation() {
@@ -110,4 +122,3 @@ public class radioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
-

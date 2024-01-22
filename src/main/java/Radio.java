@@ -1,19 +1,40 @@
 public class Radio {
-    private int currentVolume;
+    private int maxStaion = 9;
+    private int minStation = 0;
     private int currentNumberRadioStation;
+    private int maxVolume = 100;
+    private int minVolume = 0;
+    private int currentVolume;
+
+    public Radio(int size) {
+        maxStaion = minStation + size - 1;
+    }
+
+    public Radio() {
+        int size = 10;
+        maxStaion = minStation + size - 1;
+    }
+
+    public int getMaxRadioStation() {
+        return maxStaion;
+    }
+
+    public int getMinRadioStation() {
+        return minStation;
+    }
 
     public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
     }
 
     public void setCurrentNumberRadioStation(int newCurrentNumberRadioStation) {
-        if (newCurrentNumberRadioStation > 9) {
-            newCurrentNumberRadioStation = 9;
+        if (newCurrentNumberRadioStation > maxStaion) {
+            newCurrentNumberRadioStation = maxStaion;
         } else {
             currentNumberRadioStation = newCurrentNumberRadioStation;
         }
-        if (newCurrentNumberRadioStation < 0) {
-            newCurrentNumberRadioStation = 0;
+        if (newCurrentNumberRadioStation < minStation) {
+            newCurrentNumberRadioStation = minStation;
         } else {
             currentNumberRadioStation = newCurrentNumberRadioStation;
         }
@@ -22,23 +43,23 @@ public class Radio {
 
     public void next() {
         int target = currentNumberRadioStation;
-        if (target < 9) {
+        if (target < maxStaion) {
             target = target + 1;
         } else {
-            target = 0;
+            target = minStation;
         }
         currentNumberRadioStation = target;
-
     }
 
     public void prev() {
         int target = currentNumberRadioStation;
-        if (target > 0) {
+        if (target > minStation) {
             target = target - 1;
         } else {
-            target = 9;
+            target = maxStaion;
         }
         currentNumberRadioStation = target;
+
     }
 
     public int getCurrentVolume() {
@@ -69,6 +90,5 @@ public class Radio {
         }
         currentVolume = target;
     }
-
-
 }
+
