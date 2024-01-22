@@ -1,20 +1,27 @@
 public class Radio {
-    private int currentVolume;
     private int maxStaion = 9;
-    private int minStation = 0;
-    private int currentNumberRadioStation = maxStaion;
-    public Radio(int size){
-        maxStaion = minStation + size;
+    private final int minStation = 0;
+    private int currentNumberRadioStation;
+    private final int maxVolume = 100;
+    private final int minVolume = 0;
+    private int currentVolume;
 
+    public Radio(int size) {
+        maxStaion = minStation + size - 1;
     }
+
+    public Radio() {
+        int size = 10;
+        maxStaion = minStation + size - 1;
+    }
+
     public int getMaxRadioStation() {
         return maxStaion;
     }
-    public int getMinRadioStation(){
+
+    public int getMinRadioStation() {
         return minStation;
     }
-    private int maxVolume = 100;
-    private int minVolume = 0;
 
     public int getCurrentNumberRadioStation() {
         return currentNumberRadioStation;
@@ -52,6 +59,7 @@ public class Radio {
             target = maxStaion;
         }
         currentNumberRadioStation = target;
+
     }
 
     public int getCurrentVolume() {
@@ -60,25 +68,27 @@ public class Radio {
 
     public void setCurrentVolume(int newCurrentVolume) {
         currentVolume = newCurrentVolume;
+
     }
 
     public void setCurrentVolumeUp() {
         int target = currentVolume;
-        if (target < maxVolume) {
+        if (target < 100) {
             target = target + 1;
         } else {
-            target = maxVolume;
+            target = 100;
         }
         currentVolume = target;
     }
 
     public void setCurrentVolumeDown() {
         int target = currentVolume;
-        if (target > minVolume) {
+        if (target > 0) {
             target = target - 1;
         } else {
-            target = minVolume;
+            target = 0;
         }
         currentVolume = target;
     }
 }
+
