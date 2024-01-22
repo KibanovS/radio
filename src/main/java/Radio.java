@@ -28,7 +28,6 @@ public class Radio {
             target = 0;
         }
         currentNumberRadioStation = target;
-
     }
 
     public void prev() {
@@ -47,7 +46,6 @@ public class Radio {
 
     public void setCurrentVolume(int newCurrentVolume) {
         currentVolume = newCurrentVolume;
-
     }
 
     public void setCurrentVolumeUp() {
@@ -69,6 +67,4 @@ public class Radio {
         }
         currentVolume = target;
     }
-
-
 }

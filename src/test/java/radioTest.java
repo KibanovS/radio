@@ -12,7 +12,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void prevStation() {
         Radio info = new Radio();
@@ -22,7 +21,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void mustSwitchToEnd() {
         Radio info = new Radio();
@@ -32,7 +30,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void mustSwitchToBeginning() {
         Radio info = new Radio();
@@ -42,7 +39,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void correctDirectIndicationOfStation() {
         Radio info = new Radio();
@@ -51,7 +47,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void directIndicationOfTheStationBelow() {
         Radio info = new Radio();
@@ -60,7 +55,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void directIndicationOfTheStationAbove() {
         Radio info = new Radio();
@@ -69,7 +63,6 @@ public class radioTest {
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void shouldTurnUpVolume() {
         Radio info = new Radio();
@@ -79,7 +72,6 @@ public class radioTest {
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void shouldTurnDownVolume() {
         Radio info = new Radio();
@@ -89,7 +81,6 @@ public class radioTest {
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void notHigherThanMax() {
         Radio info = new Radio();
@@ -99,7 +90,6 @@ public class radioTest {
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
-
     @org.testng.annotations.Test
     public void notLowerThanMin() {
         Radio info = new Radio();
@@ -110,4 +100,3 @@ public class radioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
-
