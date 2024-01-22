@@ -58,7 +58,7 @@ public class radioTest {
     @org.testng.annotations.Test
     public void directIndicationOfTheStationAbove() {
         Radio info = new Radio();
-        info.setCurrentNumberRadioStation(10);
+        info.setCurrentNumberRadioStation(11);
         int expected = 9;
         int actual = info.getCurrentNumberRadioStation();
         Assertions.assertEquals(expected, actual);
@@ -98,5 +98,13 @@ public class radioTest {
         int expected = 0;
         int actual = info.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
+    }
+    @org.testng.annotations.Test
+    public void test() {
+        Radio info = new Radio(10);
+        Assertions.assertEquals(0, info.getMinRadioStation());
+        Assertions.assertEquals(10, info.getMaxRadioStation());
+        Assertions.assertEquals(10, info.getCurrentNumberRadioStation());
+
     }
 }
